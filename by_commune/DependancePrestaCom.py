@@ -10,6 +10,7 @@ import glob
 
 df = pd.read_csv('source/by_commune/DependancePrestaCom2009.csv', sep=";")
 origin_count = df.shape[0]
+
 df.columns = ['Communes', 'Codes_Insee', 'NB_Allocataires_2009', 
               'TR50PFRB_2009', 'TR100PFRB_2009']
 

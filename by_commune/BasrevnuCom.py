@@ -11,7 +11,7 @@ import glob
 
 df = pd.read_csv('source/by_commune/BasrevenuCom2009.csv', sep=";")
 origin_count = df.shape[0]
-#df.shape() = (36729, 5)
+
 df.columns = ['Communes', 'Codes_Insee', 'NB_Allocataires_2009', 
               'ALL_bas_revenu_2009', 'Pers_bas_revenu_2009']
 
