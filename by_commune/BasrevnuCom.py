@@ -13,7 +13,7 @@ df = pd.read_csv('source/by_commune/BasrevenuCom2009.csv', sep=";")
 origin_count = df.shape[0]
 #df.shape() = (36729, 5)
 df.columns = ['Communes', 'Codes_Insee', 'NB_Allocataires_2009', 
-              'TR50PFRB_2009', 'TR100PFRB_2009']
+              'ALL_bas_revenu_2009', 'Pers_bas_revenu_2009']
 
 files = glob.glob('source/by_commune/BasrevenuCom*')
 
@@ -54,13 +54,14 @@ else:
 df.to_csv('data/by_commune/full_BasrevenuCom.csv', encoding='utf-8')
 
 ## Features 
-#[u'NB_Allocataires_2009_BC',
-#   u'TR50PFRB_2009', u'TR100PFRB_2009', u'NB_allocataires_2010',
-#   u'ALL_bas_revenu_2010', u'Pers_bas_revenu_2010',
-#   u'NB_allocataires_2011', u'ALL_bas_revenu_2011',
-#   u'Pers_bas_revenu_2011', u'NB_allocataires_2012',
-#   u'ALL_bas_revenu_2012', u'Pers_bas_revenu_2012',
-#   u'NB_allocataires_2013', u'ALL_bas_revenu_2013',
-#   u'Pers_bas_revenu_2013', u'NB_allocataires_2014',
-#   u'ALL_bas_revenu_2014', u'Pers_bas_revenu_2014']
+#[ u'NB_Allocataires_2009_BC',
+#   u'ALL_bas_revenu_2009', u'Pers_bas_revenu_2009',
+#   u'NB_allocataires_2010', u'ALL_bas_revenu_2010',
+#   u'Pers_bas_revenu_2010', u'NB_allocataires_2011',
+#   u'ALL_bas_revenu_2011', u'Pers_bas_revenu_2011',
+#   u'NB_allocataires_2012', u'ALL_bas_revenu_2012',
+#   u'Pers_bas_revenu_2012', u'NB_allocataires_2013',
+#   u'ALL_bas_revenu_2013', u'Pers_bas_revenu_2013',
+#   u'NB_allocataires_2014', u'ALL_bas_revenu_2014',
+#   u'Pers_bas_revenu_2014']
 
