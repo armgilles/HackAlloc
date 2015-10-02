@@ -41,3 +41,4 @@ data_commune:
 	@cd by_commune
 	python by_commune/DependancePrestaCom.py
 	python by_commune/BasrevnuCom.py
+	python by_commune/NivComTotal.py
