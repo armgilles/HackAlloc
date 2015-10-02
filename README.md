@@ -10,6 +10,11 @@
 
 ## Getting started
 
-```Make```
+```
+Make
+```
+
+- Download commune's files
+- Run script
 
 
