@@ -8,12 +8,12 @@ Created on Fri Oct  2 13:47:48 2015
 import pandas as pd
 import glob
 
-df = pd.read_csv('../source/by_commune/DependancePrestaCom2009.csv', sep=";")
+df = pd.read_csv('source/by_commune/DependancePrestaCom2009.csv', sep=";")
 origin_count = df.shape[0]
 df.columns = ['Communes', 'Codes_Insee', 'NB_Allocataires_2009', 
               'TR50PFRB_2009', 'TR100PFRB_2009']
 
-files = glob.glob('../source/by_commune/DependancePrestaCom*')
+files = glob.glob('source/by_commune/DependancePrestaCom*')
 
 for path_file in files:
     year = str(path_file[-8:-4])
@@ -50,7 +50,7 @@ else:
     print "Hey we lost some lines in DependancePresta"
 
 
-df.to_csv('../data/by_commune/full_DependancePrestaCom.csv', encoding='utf-8')
+df.to_csv('data/by_commune/full_DependancePrestaCom.csv', encoding='utf-8')
 
 ## Features 
 #[u'NB_Allocataires_2009_DPC',
