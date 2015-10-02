@@ -4,12 +4,8 @@ all: install download_commune data_commune
 
 install:
 	#pip install -r requirements.txt
-	@rm -rf source
-	@mkdir source
-	@cd source && mkdir by_commune
 	#@rm -rf data
 	#@mkdir data
-	#cd data && mkdir by_commune
 
 download_commune:
 	# RSA : http://data.caf.fr/dataset/foyers-allocataires-percevant-le-revenu-de-solidarite-active-rsa-par-commune
@@ -29,8 +25,6 @@ download_commune:
 	@wget -O source/by_commune/PAJECom2014.csv http://data.caf.fr/dataset/23f79fd1-a59c-4a9a-91e5-717f126cb166/resource/41936fac-2bb5-4f64-8670-1286467fa306/download/PAJECom2014.csv
 
 
-
-
 data_commune:
-	@cd by_commune
-	
+	python get_by_year.py
+	python insee_agg_commune.py	
