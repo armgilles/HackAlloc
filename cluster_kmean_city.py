@@ -11,14 +11,14 @@ from sklearn.cluster import KMeans
 
 
 
-test = pd.read_csv('data/commune_insee.csv')
+df = pd.read_csv('data/commune_insee.csv')
 
-df = test[test.DEP.isin(['76', '27'])].reset_index(drop=True)
+#df = test[test.DEP.isin(['76', '27'])].reset_index(drop=True)
 
 features = df.columns.tolist()
 
 # unusefull col
-for col in ["LIBCOM","REG","DEP"]:
+for col in ["LIBCOM","REG","DEP", "P11_POP"]:
     features.remove(col)
 
 # key
@@ -35,13 +35,15 @@ pca = PCA(n_components=2).fit(X)
 X_pca = pca.transform(X)
 X = X_pca; print "PCA transformation"; pca_bool = 1
 
-k_means = KMeans(init='k-means++', n_clusters=3, n_init=10).fit(X)
+k_means = KMeans(init='k-means++', n_clusters=5, n_init=10).fit(X)
 
 k_means_labels = k_means.labels_
 k_means_cluster_centers = k_means.cluster_centers_
 k_means_labels_unique = np.unique(k_means_labels)
 
 df['cluster'] = pd.Series(k_means_labels)
+
+df[['COM', 'cluster']].to_csv('data/ref_com_cluster.csv',encoding='utf-8', index=False)
 
 
 ## Plot result
@@ -79,7 +81,7 @@ import matplotlib.pyplot as plt
 
 
 
-colors = ['#ffdab9','#a2bf6b','#8b0000']
+colors = ['#ffffe0','#ffbd84','#f47461','#cb2f44','#8b0000']
 for k, col in zip(range(k_means.n_clusters), colors):
     my_members = k_means_labels == k
     cluster_center = k_means_cluster_centers[k]

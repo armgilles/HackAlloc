@@ -53,6 +53,7 @@ for feature in features_mean:
 features_city.remove("P11_POP")
 
 pop_city = insee.groupby('COM')['P11_POP'].sum().reset_index()
+pop_city.to_csv('data/ref_pop.csv', encoding='utf-8', index=False)
 
 
 

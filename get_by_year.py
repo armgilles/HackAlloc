@@ -3,12 +3,21 @@
 Created on Fri Oct  2 18:58:06 2015
 
 @author: GILLES ARMAND
+Create 1 file by year with CAF's features
 """
 
 
 import pandas as pd
 
-year = ['2009', '2010', '2011', '2012', '2013', '2014']
+def get_percent(x, total):
+    try:
+        return (x * 100) / total
+    except:
+        return 0
+
+year = ['2009', '2010', '2011', '2012', '2013','2014']
+
+ref_pop = pd.read_csv('data/ref_pop.csv')
 
 for my_year in year:
     print my_year
@@ -22,10 +31,21 @@ for my_year in year:
     
     df = pd.merge(paje, rsa, how='inner', on='Codes_Insee')
     df = df[['Codes_Insee', u'paje_NB_allocataires', u'ALL_PAJE',
-             u'ALL_PRIM', u'ALL_BASEP', u'ALL_ASMA', u'ALL_Clca_Colca',
+             u'ALL_PRIM', u'ALL_BASEP', u'ALL_Clca_Colca',
              u'rsa_NB_allocataires', u'NB_allocataire_RSA',
              u'Dont_RSA_jeune', u'RSA_SOCLE_non_Majore', u'RSA_SOCLE_Majore',
              u'RSA_activite']]
+    
+    df.fillna(0, inplace=True)
+    df = pd.merge(df, ref_pop, how='inner', left_on='Codes_Insee', right_on='COM')
+    percent_features = [u'ALL_PAJE',
+             u'ALL_PRIM', u'ALL_BASEP', u'ALL_Clca_Colca',
+             u'rsa_NB_allocataires', u'NB_allocataire_RSA',
+             u'Dont_RSA_jeune', u'RSA_SOCLE_non_Majore', u'RSA_SOCLE_Majore',
+             u'RSA_activite']
+    
+    for percent in percent_features:
+        df[percent] = df.apply(lambda row: get_percent(row[percent], row.P11_POP), axis=1)
              
     output = 'data/caf_' + str(my_year) + '.csv'
-    df.to_csv(output, encoding='utf-8', index=False)
+#    df.to_csv(output, encoding='utf-8', index=False)
