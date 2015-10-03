@@ -48,4 +48,4 @@ for my_year in year:
         df[percent] = df.apply(lambda row: get_percent(row[percent], row.P11_POP), axis=1)
              
     output = 'data/caf_' + str(my_year) + '.csv'
-#    df.to_csv(output, encoding='utf-8', index=False)
+    df.to_csv(output, encoding='utf-8', index=False)
