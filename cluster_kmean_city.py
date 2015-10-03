@@ -43,7 +43,7 @@ k_means_labels_unique = np.unique(k_means_labels)
 
 df['cluster'] = pd.Series(k_means_labels)
 
-df[['COM', 'cluster']].to_csv('data/ref_com_cluster.csv',encoding='utf-8', index=False)
+df[['COM',"LIBCOM","REG","DEP", 'cluster']].to_csv('data/ref_com_cluster.csv',encoding='utf-8', index=False)
 
 
 ## Plot result
