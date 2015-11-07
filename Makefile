@@ -42,6 +42,14 @@ download_commune:
 	@wget -O source/ConfigFamiliale2013.csv	http://data.caf.fr/dataset/55b512d5-fc90-41ff-9908-47b41d0599a3/resource/59ea1a6a-a02b-4b3d-bfed-ccf17db2048c/download/configfamiliale2013.csv
 	@wget -O source/ConfigFamiliale2014.csv	http://data.caf.fr/dataset/55b512d5-fc90-41ff-9908-47b41d0599a3/resource/59ea1a6a-a02b-4b3d-bfed-ccf17db2048c/download/configfamiliale2014.csv
 
+	# TrancheAge : http://data.caf.fr/dataset/denombrement-et-repartition-des-foyers-allocataires-selon-l-age-du-responsable
+	@wget -O source/TrancheAge2009.csv	http://data.caf.fr/dataset/d52a5176-195f-47c0-a851-b652e1d2875c/resource/3b326055-b1b5-4aa3-a4d2-18e895cb7e7d/download/trancheage2009.csv
+	@wget -O source/TrancheAge2010.csv	http://data.caf.fr/dataset/d52a5176-195f-47c0-a851-b652e1d2875c/resource/8137ac83-32ca-48e4-a23e-d8f6263601fc/download/trancheage2010.csv
+	@wget -O source/TrancheAge2011.csv	http://data.caf.fr/dataset/d52a5176-195f-47c0-a851-b652e1d2875c/resource/02dc20f2-3a3d-4272-9893-07912fe563fd/download/trancheage2011.csv
+	@wget -O source/TrancheAge2012.csv	http://data.caf.fr/dataset/d52a5176-195f-47c0-a851-b652e1d2875c/resource/0f9dd215-eb6d-4479-90e0-0b0d951d5dec/download/trancheage2012.csv
+	@wget -O source/TrancheAge2013.csv	http://data.caf.fr/dataset/d52a5176-195f-47c0-a851-b652e1d2875c/resource/a6283267-9635-4452-b30e-35fe8a5cdbe2/download/trancheage2013.csv
+	@wget -O source/TrancheAge2014.csv	http://data.caf.fr/dataset/d52a5176-195f-47c0-a851-b652e1d2875c/resource/b46e67ea-66f9-4855-bc01-70690c1809dd/download/trancheage2014.csv
+
 
 data_commune:
 	@cd by_commune
@@ -49,3 +57,4 @@ data_commune:
 	python BasrevnuCom.py
 	python NivComTotal.py
 	python ConfigFamiliale.py
+	python TrancheAge.py
