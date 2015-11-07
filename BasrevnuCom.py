@@ -5,16 +5,17 @@ Created on Fri Oct  2 13:47:48 2015
 @author: GILLES Armand
 """
 
+
 import pandas as pd
 import glob
 
-df = pd.read_csv('source/by_commune/DependancePrestaCom2009.csv', sep=";")
+df = pd.read_csv('source/BasrevenuCom2009.csv', sep=";")
 origin_count = df.shape[0]
 
 df.columns = ['Communes', 'Codes_Insee', 'NB_Allocataires_2009', 
-              'TR50PFRB_2009', 'TR100PFRB_2009']
+              'ALL_bas_revenu_2009', 'Pers_bas_revenu_2009']
 
-files = glob.glob('source/by_commune/DependancePrestaCom*')
+files = glob.glob('source/BasrevenuCom*')
 
 for path_file in files:
     year = str(path_file[-8:-4])
@@ -38,7 +39,7 @@ for path_file in files:
 list_col = []
 for col in df.columns:
     if "NB_Allocataires" in col:
-        list_col.append(col+"_DPC") # DPC = DependancePrestaCom
+        list_col.append(col+"_BC") # BC = BasrevnuCOM
     else:
         list_col.append(col)
 df.columns = list_col
@@ -46,19 +47,21 @@ df.columns = list_col
 final_count = df.shape[0]
 
 if (origin_count == final_count):
-    print "File DependancePresta is OK"
+    print "File BasrevnuCom is OK"
 else:
-    print "Hey we lost some lines in DependancePresta"
+    print "Hey we lost some lines in BasrevnuCom"
 
-
-df.to_csv('data/by_commune/full_DependancePrestaCom.csv', encoding='utf-8')
+df.to_csv('data/full_BasrevenuCom.csv', encoding='utf-8')
 
 ## Features 
-#[u'NB_Allocataires_2009_DPC',
-#u'TR50PFRB_2009', u'TR100PFRB_2009', u'NB_Allocataires_2010_DPC',
-#u'TR50PFRB_2010', u'TR100PFRB_2010', u'NB_Allocataires_2011_DPC',
-#u'TR50PFRB_2011', u'TR100PFRB_2011', u'NB_Allocataires_2012_DPC',
-#u'TR50PFRB_2012', u'TR100PFRB_2012', u'NB_Allocataires_2013_DPC',
-#u'TR50PFRB_2013', u'TR100PFRB_2013', u'NB_Allocataires_2014_DPC',
-#u'TR50PFRB_2014', u'TR100PFRB_2014']
+#[ u'NB_Allocataires_2009_BC',
+#   u'ALL_bas_revenu_2009', u'Pers_bas_revenu_2009',
+#   u'NB_allocataires_2010', u'ALL_bas_revenu_2010',
+#   u'Pers_bas_revenu_2010', u'NB_allocataires_2011',
+#   u'ALL_bas_revenu_2011', u'Pers_bas_revenu_2011',
+#   u'NB_allocataires_2012', u'ALL_bas_revenu_2012',
+#   u'Pers_bas_revenu_2012', u'NB_allocataires_2013',
+#   u'ALL_bas_revenu_2013', u'Pers_bas_revenu_2013',
+#   u'NB_allocataires_2014', u'ALL_bas_revenu_2014',
+#   u'Pers_bas_revenu_2014']
 

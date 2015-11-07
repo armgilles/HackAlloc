@@ -9,7 +9,7 @@ Created on Fri Oct  2 15:08:22 2015
 import pandas as pd
 import glob
 
-df = pd.read_csv('source/by_commune/ConfigFamiliale2009.csv', sep=";")
+df = pd.read_csv('source/ConfigFamiliale2009.csv', sep=";")
 origin_count = df.shape[0]
 
 df.columns = ['Communes', 'Codes_Insee', 'NB_Allocataires_2009', 
@@ -17,7 +17,7 @@ df.columns = ['Communes', 'Codes_Insee', 'NB_Allocataires_2009',
               'Homme_Isole', 'Femme_Isolee', 'MONO_1_ENF', 'MONO_2_ENF',
               'MONO_3_ENF', 'MONO_4plus_ENF']
 
-files = glob.glob('source/by_commune/ConfigFamiliale*')
+files = glob.glob('source/ConfigFamiliale*')
 
 for path_file in files:
     year = str(path_file[-8:-4])
@@ -53,7 +53,7 @@ if (origin_count == final_count):
 else:
     print "Hey we lost some lines in ConfigFamiliale"
 
-df.to_csv('data/by_commune/full_ConfigFamiliale.csv', encoding='utf-8')
+df.to_csv('data/full_ConfigFamiliale.csv', encoding='utf-8')
 
 ## Features 
 #[ 'NB_Allocataires_2009_CF', u'COUP_0_ENF',
