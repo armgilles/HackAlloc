@@ -8,6 +8,8 @@ Created on Fri Oct  2 19:28:35 2015
 import pandas as pd
 import numpy as np
 from sklearn.cluster import KMeans
+from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import MinMaxScaler
 
 
 
@@ -26,16 +28,26 @@ features.remove('COM')
 
 df.fillna(value=0, inplace=True)
 
+df = df[df.DEP.isin(['76', '33', '13'])]
+
+df.reset_index(drop=True, inplace=True)
+
+scaler = StandardScaler()
+min_max = MinMaxScaler()
+
+# Standardization
+df[features] = min_max.fit_transform(df[features])
+
 X = df[features].values
 
 # PCA Transformation
 from sklearn.decomposition import PCA
 
-pca = PCA(n_components=2).fit(X)
+pca = PCA(n_components=3).fit(X)
 X_pca = pca.transform(X)
 X = X_pca; print "PCA transformation"; pca_bool = 1
 
-k_means = KMeans(init='k-means++', n_clusters=5, n_init=10).fit(X)
+k_means = KMeans(init='k-means++', n_clusters=3, n_init=10).fit(X)
 
 k_means_labels = k_means.labels_
 k_means_cluster_centers = k_means.cluster_centers_
@@ -43,15 +55,18 @@ k_means_labels_unique = np.unique(k_means_labels)
 
 df['cluster'] = pd.Series(k_means_labels)
 
+# Reverse standardization
+df[features] = min_max.inverse_transform(df[features])
+
 df[['COM',"LIBCOM","REG","DEP", 'cluster']].to_csv('data/ref_com_cluster.csv',encoding='utf-8', index=False)
 
 
 ## Plot result
 import matplotlib.pyplot as plt
-#from mpl_toolkits.mplot3d import Axes3D
-#
-#from itertools import cycle
-#
+from mpl_toolkits.mplot3d import Axes3D
+
+from itertools import cycle
+
 #colors = cycle('bgrcmykbgrcmykbgrcmykbgrcmyk')
 #fig = plt.figure().gca(projection='3d')
 #
@@ -66,29 +81,38 @@ import matplotlib.pyplot as plt
 #
 #
 #for k, col in zip(range(k_means.n_clusters), colors):
-#    my_members = k_means_labels == k
-#    cluster_center = k_means_cluster_centers[k]
-#    fig.scatter(X[my_members, 0], X[my_members, 1], X[my_members, 2], color=col,
-#             marker='.', alpha=0.5)
+#    if (k == 0):
+#        my_members = k_means_labels == k
+#        cluster_center = k_means_cluster_centers[k]
+#        fig.scatter(X[my_members, 0], X[my_members, 1], X[my_members, 2], color=col,
+#                 marker='.', alpha=0.5)
 #
 ##for k, col in zip(range(k_means.n_clusters), colors): 
 #fig.plot(k_means_cluster_centers[:, 0], k_means_cluster_centers[:, 1], k_means_cluster_centers[:, 2], 
 #         '+', color='k', markersize=8)
 #       
-#plt.title('Estimated number of clusters: %d' % k_means.n_clusters)
+#plt.title('%d types de villes' % k_means.n_clusters)
 #plt.show()
 
+dico_color = {'0': '#7fff00',
+              '1': '#ff00ff',
+              '2': '#00bfff',
+              '3': '#ff8c00'}
+              
+df['color'] = df.cluster.apply(lambda x: dico_color.get(x))
 
 
-
-colors = ['#ffffe0','#ffbd84','#f47461','#cb2f44','#8b0000']
-for k, col in zip(range(k_means.n_clusters), colors):
+colors = ['#7fff00','#ff00ff','#ff8c00']
+for k, col in zip(range(k_means_labels_unique.argmax()), colors):
     my_members = k_means_labels == k
     cluster_center = k_means_cluster_centers[k]
     plt.scatter(X[my_members, 0], X[my_members, 1], color=col,
-             marker='.', alpha=0.9)
+             marker='.', alpha=0.6)
     plt.plot(k_means_cluster_centers[:, 0], k_means_cluster_centers[:, 1], 
          '+', color='k', markersize=8)
-plt.title('K-means Clustering for %d Cluster with PCA decomposition' % k_means.n_clusters)
+    
+plt.title('%d types de ville' % k_means.n_clusters)
 plt.xlabel('First PCA direction')
 plt.ylabel('Seconde PCA direction')
+
+

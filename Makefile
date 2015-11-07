@@ -29,4 +29,4 @@ data_commune:
 	python merging_insee_city.py			# Create ref_pop.csv & commune_insee.csv
 	python get_by_year.py 					# Create caf_YEAR.csv
 	python cluster_kmean_city.py 			# Create ref_com_cluster.csv
-	python merging_caf_cluster_com.py  		# Graph
+	python merging_caf_cluster_com.py  		# Graph & create fichier metric distance aide caf sur cluster com 
