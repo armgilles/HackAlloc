@@ -74,6 +74,15 @@ download_commune:
 	@wget -O source/RsaPersCom2013.csv	http://data.caf.fr/dataset/6b811c7a-6868-4223-bd93-ffaf95314c10/resource/50b1afd9-d1ea-4f09-a54f-6634a9cbd9d0/download/RSAPersCom2013.csv
 	@wget -O source/RsaPersCom2014.csv	http://data.caf.fr/dataset/6b811c7a-6868-4223-bd93-ffaf95314c10/resource/bdd7ad3d-5f1f-42a0-a351-9bd46c883418/download/RSAPersCom2014.csv
 
+	# AAHCom : http://data.caf.fr/dataset/personnes-ayant-un-droit-versable-a-l-allocation-aux-adultes-handicapes
+	@wget -O source/AAHCom2009.csv	http://data.caf.fr/dataset/c7490d25-8907-4080-b638-d1d43b33e37f/resource/79177257-e87f-4c74-b6f1-5c9f9bfd8f31/download/AAHCom2009.csv
+	@wget -O source/AAHCom2010.csv	http://data.caf.fr/dataset/c7490d25-8907-4080-b638-d1d43b33e37f/resource/6faeb068-5c12-46de-a696-6faacb2e1fb3/download/AAHCom2010.csv
+	@wget -O source/AAHCom2011.csv	http://data.caf.fr/dataset/c7490d25-8907-4080-b638-d1d43b33e37f/resource/ef06d897-a3e6-49e9-9663-6c8e3b41e439/download/AAHCom2011.csv
+	@wget -O source/AAHCom2012.csv	http://data.caf.fr/dataset/c7490d25-8907-4080-b638-d1d43b33e37f/resource/01308b3a-097e-4c5d-9c7c-60705d5c6de7/download/AAHCom2012.csv
+	@wget -O source/AAHCom2013.csv	http://data.caf.fr/dataset/c7490d25-8907-4080-b638-d1d43b33e37f/resource/fe4458bd-48b2-4495-b7bc-cddb0d1884fa/download/AAHCom2013.csv
+	@wget -O source/AAHCom2014.csv	http://data.caf.fr/dataset/c7490d25-8907-4080-b638-d1d43b33e37f/resource/456530e8-49b3-48ed-803c-25229c614403/download/AAHCom2014.csv
+
+
 data_commune:
 	@cd by_commune
 	python DependancePrestaCom.py
@@ -84,3 +93,4 @@ data_commune:
 	python LOGCom.py
 	python PajeCom.py
 	python RsaPersCom.py
+	python AAHCom.py
