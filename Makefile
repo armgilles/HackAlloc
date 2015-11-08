@@ -111,3 +111,4 @@ data_commune:
 	python RsaPersCom.py
 	python AAHCom.py
 	python EnfantAgeCom.py
+	python EnfantAEEH.py
