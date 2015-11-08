@@ -58,6 +58,15 @@ download_commune:
 	@wget -O source/LOGCom2013.csv	http://data.caf.fr/dataset/1263e313-9bb0-417d-bb88-1488b6993ae8/resource/21eab4ce-9ad3-4346-8efe-cb994f2a7011/download/LOGCom2013.csv
 	@wget -O source/LOGCom2014.csv	http://data.caf.fr/dataset/1263e313-9bb0-417d-bb88-1488b6993ae8/resource/37ba7456-0996-4c95-ba28-38f079d25d86/download/LOGCom2014.csv
 
+	# PAJECom : http://data.caf.fr/dataset/foyers-allocataires-percevant-la-prestation-d-accueil-du-jeune-enfant-paje-par-commune
+	@wget -O source/PajeCom2009.csv	http://data.caf.fr/dataset/23f79fd1-a59c-4a9a-91e5-717f126cb166/resource/41936fac-2bb5-4f64-8670-1286467fa306/download/PAJECom2009.csv
+	@wget -O source/PajeCom2010.csv	http://data.caf.fr/dataset/23f79fd1-a59c-4a9a-91e5-717f126cb166/resource/d49e20a3-d3e8-4a3d-a239-fed7c2a00da6/download/PAJECom2010.csv
+	@wget -O source/PajeCom2011.csv	http://data.caf.fr/dataset/23f79fd1-a59c-4a9a-91e5-717f126cb166/resource/06cec282-cdf6-40a7-8e26-ba611eb71ea6/download/PAJECom2011.csv
+	@wget -O source/PajeCom2012.csv	http://data.caf.fr/dataset/23f79fd1-a59c-4a9a-91e5-717f126cb166/resource/d0903f8c-027a-4a06-963d-f56d93e84c4a/download/PAJECom2012.csv
+	@wget -O source/PajeCom2013.csv	http://data.caf.fr/dataset/23f79fd1-a59c-4a9a-91e5-717f126cb166/resource/05152e2d-0d49-4245-8b41-4c4be74a6226/download/PAJECom2013.csv
+	@wget -O source/PajeCom2014.csv	http://data.caf.fr/dataset/23f79fd1-a59c-4a9a-91e5-717f126cb166/resource/cc73587b-8e69-4c42-90aa-488b9ef168dd/download/PAJECom2014.csv
+
+
 data_commune:
 	@cd by_commune
 	python DependancePrestaCom.py
@@ -65,3 +74,5 @@ data_commune:
 	python NivComTotal.py
 	python ConfigFamiliale.py
 	python TrancheAge.py
+	python LOGCom.py
+	python PajeCom.py
