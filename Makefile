@@ -82,6 +82,15 @@ download_commune:
 	@wget -O source/AAHCom2013.csv	http://data.caf.fr/dataset/c7490d25-8907-4080-b638-d1d43b33e37f/resource/fe4458bd-48b2-4495-b7bc-cddb0d1884fa/download/AAHCom2013.csv
 	@wget -O source/AAHCom2014.csv	http://data.caf.fr/dataset/c7490d25-8907-4080-b638-d1d43b33e37f/resource/456530e8-49b3-48ed-803c-25229c614403/download/AAHCom2014.csv
 
+	# EnfantAgeCom : http://data.caf.fr/dataset/repartition-par-tranche-d-age-des-enfants-couverts-par-des-prestations-caf
+	@wget -O source/EnfantAgeCom2009.csv	http://data.caf.fr/dataset/f2efacd4-5276-4cdf-a7a4-5c3e9f7d054c/resource/6a9a4c14-c004-43aa-9c73-46a8bb0328bc/download/enfantageCom2009.csv
+	#@wget -O source/EnfantAgeCom2010.csv	Pas de lien valide
+	@wget -O source/EnfantAgeCom2011.csv	http://data.caf.fr/dataset/f2efacd4-5276-4cdf-a7a4-5c3e9f7d054c/resource/2fa7c247-b555-469f-83f3-3d9474cb32be/download/enfantageCom2011.csv
+	@wget -O source/EnfantAgeCom2012.csv	http://data.caf.fr/dataset/f2efacd4-5276-4cdf-a7a4-5c3e9f7d054c/resource/d2e482f6-6b38-4dbe-b3ea-d85203582300/download/enfantageCom2012.csv
+	@wget -O source/EnfantAgeCom2013.csv	http://data.caf.fr/dataset/f2efacd4-5276-4cdf-a7a4-5c3e9f7d054c/resource/7e4f551c-64a9-47de-9162-308d2b5f7391/download/enfantageCom2013.csv
+	@wget -O source/EnfantAgeCom2014.csv	http://data.caf.fr/dataset/f2efacd4-5276-4cdf-a7a4-5c3e9f7d054c/resource/567d37b3-84de-449b-9089-5ce18bd28160/download/enfantageCom2014.csv
+
+
 
 data_commune:
 	@cd by_commune
@@ -94,3 +103,4 @@ data_commune:
 	python PajeCom.py
 	python RsaPersCom.py
 	python AAHCom.py
+	python EnfantAgeCom.py
