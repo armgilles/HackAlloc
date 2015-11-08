@@ -66,6 +66,13 @@ download_commune:
 	@wget -O source/PajeCom2013.csv	http://data.caf.fr/dataset/23f79fd1-a59c-4a9a-91e5-717f126cb166/resource/05152e2d-0d49-4245-8b41-4c4be74a6226/download/PAJECom2013.csv
 	@wget -O source/PajeCom2014.csv	http://data.caf.fr/dataset/23f79fd1-a59c-4a9a-91e5-717f126cb166/resource/cc73587b-8e69-4c42-90aa-488b9ef168dd/download/PAJECom2014.csv
 
+	# RSAPersCom : http://data.caf.fr/dataset/population-des-foyers-allocataires-percevant-le-revenu-de-solidarite
+	@wget -O source/RsaPersCom2009.csv	http://data.caf.fr/dataset/6b811c7a-6868-4223-bd93-ffaf95314c10/resource/040aeb4e-04ed-4d84-9086-072b4efedb54/download/RSAPersCom2009.csv
+	@wget -O source/RsaPersCom2010.csv	http://data.caf.fr/dataset/6b811c7a-6868-4223-bd93-ffaf95314c10/resource/a6fb1025-4d77-4b45-bf30-75ee666d15fb/download/RSAPersCom2010.csv
+	@wget -O source/RsaPersCom2011.csv	http://data.caf.fr/dataset/6b811c7a-6868-4223-bd93-ffaf95314c10/resource/e64497fd-f625-48c0-91be-9adfdaa49e11/download/RSAPersCom2011.csv
+	@wget -O source/RsaPersCom2012.csv	http://data.caf.fr/dataset/6b811c7a-6868-4223-bd93-ffaf95314c10/resource/3811040d-ea31-436f-9f0d-04bb19c91fb8/download/RSAPersCom2012.csv
+	@wget -O source/RsaPersCom2013.csv	http://data.caf.fr/dataset/6b811c7a-6868-4223-bd93-ffaf95314c10/resource/50b1afd9-d1ea-4f09-a54f-6634a9cbd9d0/download/RSAPersCom2013.csv
+	@wget -O source/RsaPersCom2014.csv	http://data.caf.fr/dataset/6b811c7a-6868-4223-bd93-ffaf95314c10/resource/bdd7ad3d-5f1f-42a0-a351-9bd46c883418/download/RSAPersCom2014.csv
 
 data_commune:
 	@cd by_commune
@@ -76,3 +83,4 @@ data_commune:
 	python TrancheAge.py
 	python LOGCom.py
 	python PajeCom.py
+	python RsaPersCom.py
