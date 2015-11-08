@@ -11,7 +11,7 @@ import glob
 df = pd.read_csv('source/EnfantAgeCom2009.csv', sep=";")
 origin_count = df.shape[0]
 
-df.columns = ['Communes', 'Codes_Insee', 'NB_Enfants_0_2_ans2009', 
+df.columns = ['Communes', 'Codes_Insee', 'NB_Enfants_0_2_ans_2009', 
               'NB_Enfants_3_5_ans_2009', 'NB_Enfants_6_11_ans_2009',
               'NB_Enfants_12_15_ans_2009', 'NB_Enfants_16_17_ans_2009',
               'NB_Enfants_18_19_ans_2009', 'NB_Enfants_20_24_ans_2009',

@@ -90,6 +90,13 @@ download_commune:
 	@wget -O source/EnfantAgeCom2013.csv	http://data.caf.fr/dataset/f2efacd4-5276-4cdf-a7a4-5c3e9f7d054c/resource/7e4f551c-64a9-47de-9162-308d2b5f7391/download/enfantageCom2013.csv
 	@wget -O source/EnfantAgeCom2014.csv	http://data.caf.fr/dataset/f2efacd4-5276-4cdf-a7a4-5c3e9f7d054c/resource/567d37b3-84de-449b-9089-5ce18bd28160/download/enfantageCom2014.csv
 
+	# enfantAEEH : http://data.caf.fr/dataset/nombre-d-enfants-couverts-par-l-allocation-d-education-de-l-enfant-handicape-aeeh-par-commune
+	@wget -O source/EnfantAEEH2009.csv	http://data.caf.fr/dataset/2c99f216-1474-40b3-a12b-e69afd2f6c4d/resource/bb081154-2e48-4882-85c5-0f465d01479b/download/enfantAEEH2009.csv
+	@wget -O source/EnfantAEEH2010.csv	http://data.caf.fr/dataset/2c99f216-1474-40b3-a12b-e69afd2f6c4d/resource/b3e16fc4-77d7-4961-8b4c-c19182ac75fc/download/enfantAEEH2010.csv
+	@wget -O source/EnfantAEEH2011.csv	http://data.caf.fr/dataset/2c99f216-1474-40b3-a12b-e69afd2f6c4d/resource/d73969da-1878-4750-8448-15be4e9ce842/download/enfantAEEH2011.csv
+	@wget -O source/EnfantAEEH2012.csv	http://data.caf.fr/dataset/2c99f216-1474-40b3-a12b-e69afd2f6c4d/resource/f7543694-3c9e-4971-96ce-a64e3b5ba421/download/enfantAEEH2012.csv
+	@wget -O source/EnfantAEEH2013.csv	http://data.caf.fr/dataset/2c99f216-1474-40b3-a12b-e69afd2f6c4d/resource/0160ed9b-fcb7-4acc-a283-655bb11303c3/download/AEEHEnfCom2013.csv
+	@wget -O source/EnfantAEEH2014.csv	http://data.caf.fr/dataset/2c99f216-1474-40b3-a12b-e69afd2f6c4d/resource/76738e35-38a1-4a2d-a709-8327ba8f9978/download/enfantAEEH2014.csv
 
 
 data_commune:
