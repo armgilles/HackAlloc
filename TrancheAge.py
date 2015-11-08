@@ -21,7 +21,6 @@ for path_file in files:
     year = str(path_file[-8:-4])
     if (year != '2009'):
         df_temp = pd.read_csv(path_file, sep=';')
-        print year + ' ' + str(len(df_temp.columns))
         
         # Rename Col with year
         year_col = ['Communes', 'Codes_Insee']

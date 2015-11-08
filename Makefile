@@ -50,6 +50,13 @@ download_commune:
 	@wget -O source/TrancheAge2013.csv	http://data.caf.fr/dataset/d52a5176-195f-47c0-a851-b652e1d2875c/resource/a6283267-9635-4452-b30e-35fe8a5cdbe2/download/trancheage2013.csv
 	@wget -O source/TrancheAge2014.csv	http://data.caf.fr/dataset/d52a5176-195f-47c0-a851-b652e1d2875c/resource/b46e67ea-66f9-4855-bc01-70690c1809dd/download/trancheage2014.csv
 
+	# LOGCom : http://data.caf.fr/dataset/population-des-foyers-allocataires-percevant-une-aide-personnelle-au-logement
+	@wget -O source/LOGCom2009.csv	http://data.caf.fr/dataset/1263e313-9bb0-417d-bb88-1488b6993ae8/resource/e8d57800-dd95-4221-b4d8-2044ba67cbcb/download/LOGCom2009.csv
+	@wget -O source/LOGCom2010.csv	http://data.caf.fr/dataset/1263e313-9bb0-417d-bb88-1488b6993ae8/resource/6108a4d5-26e8-4f25-9f49-6a8da58ea6ae/download/LOGCom2010.csv
+	@wget -O source/LOGCom2011.csv	http://data.caf.fr/dataset/1263e313-9bb0-417d-bb88-1488b6993ae8/resource/5867d5ab-190d-40c8-8f4d-b7eb9dc1fc8e/download/LOGCom2011.csv
+	@wget -O source/LOGCom2012.csv	http://data.caf.fr/dataset/1263e313-9bb0-417d-bb88-1488b6993ae8/resource/8566dd5b-b9db-4e67-89a1-c10e62b703a8/download/LOGCom2012.csv
+	@wget -O source/LOGCom2013.csv	http://data.caf.fr/dataset/1263e313-9bb0-417d-bb88-1488b6993ae8/resource/21eab4ce-9ad3-4346-8efe-cb994f2a7011/download/LOGCom2013.csv
+	@wget -O source/LOGCom2014.csv	http://data.caf.fr/dataset/1263e313-9bb0-417d-bb88-1488b6993ae8/resource/37ba7456-0996-4c95-ba28-38f079d25d86/download/LOGCom2014.csv
 
 data_commune:
 	@cd by_commune
