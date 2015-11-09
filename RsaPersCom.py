@@ -38,7 +38,7 @@ for path_file in files:
 # Rename col to have unique name in futur merge
 list_col = []
 for col in df.columns:
-    if "nb_allocataires" in col.lower(): # NB_Allocataires (2009) != NB_allocataires (2010)
+    if col[0:15] in 'NB_Pers_par_Foyer': 
         list_col.append(col+"_RPC") # RPC = RsaPersCom
     else:
         list_col.append(col)

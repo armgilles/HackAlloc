@@ -38,7 +38,8 @@ for path_file in files:
 # Rename col to have unique name in futur merge
 list_col = []
 for col in df.columns:
-    if "NB_Pers_par_Foyer_Alloc" in col:
+    # We have to add indicator to create unique feature name before merging
+    if col not in ['Communes', 'Codes_Insee']:
         list_col.append(col+"_NCT") # NCT = NivComTotal
     else:
         list_col.append(col)

@@ -42,8 +42,9 @@ for path_file in files:
 # Rename col to have unique name in futur merge
 list_col = []
 for col in df.columns:
-    if "nb_allocataires" in col.lower(): 
-        list_col.append(col+"_RPC") # EAC = EnfantAgeCom
+    # We have to add indicator to create unique feature name before merging
+    if col not in ['Communes', 'Codes_Insee']:
+        list_col.append(col+"_EAC") # EAC = EnfantAgeCom
     else:
         list_col.append(col)
 df.columns = list_col
