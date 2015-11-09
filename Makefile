@@ -114,6 +114,15 @@ download_commune:
 	@wget -O source/EJCom2013.csv	http://data.caf.fr/dataset/a1f4d94f-0df7-42d9-82ee-b8bf18915488/resource/9d1a5311-c886-4dee-8ebf-626059a474b2/download/EJCom2013.csv
 	@wget -O source/EJCom2014.csv	http://data.caf.fr/dataset/a1f4d94f-0df7-42d9-82ee-b8bf18915488/resource/1fc10e2d-781e-422e-a0b0-58b51e9bbb8f/download/EJCom2014.csv
 
+	# LogPersPrestaCom : http://data.caf.fr/dataset/population-des-foyers-allocatair
+	@wget -O source/LOGPersPrestaCom2009.csv	http://data.caf.fr/dataset/ad042a79-c4b8-4f80-88ef-7d410e121404/resource/18e53a92-da86-4c9d-9488-25c0c6229538/download/LOGPersPrestaCom2009.csv
+	@wget -O source/LOGPersPrestaCom2010.csv	http://data.caf.fr/dataset/ad042a79-c4b8-4f80-88ef-7d410e121404/resource/b2f4a665-2dcc-4eae-b777-d90563641aad/download/LOGPersPrestaCom2010.csv
+	@wget -O source/LOGPersPrestaCom2011.csv	http://data.caf.fr/dataset/ad042a79-c4b8-4f80-88ef-7d410e121404/resource/b324da48-dc27-4611-ac23-3eff6c1febff/download/LOGPersPrestaCom2011.csv
+	@wget -O source/LOGPersPrestaCom2012.csv	http://data.caf.fr/dataset/ad042a79-c4b8-4f80-88ef-7d410e121404/resource/03f7ea8c-53e4-4c92-8a21-03863d61373b/download/LOGPersPrestaCom2012.csv
+	@wget -O source/LOGPersPrestaCom2013.csv	http://data.caf.fr/dataset/ad042a79-c4b8-4f80-88ef-7d410e121404/resource/48c22f83-2dcc-4b20-a8c8-ba073ef890cf/download/LOGPersPrestaCom2013.csv
+	@wget -O source/LOGPersPrestaCom2014.csv	http://data.caf.fr/dataset/ad042a79-c4b8-4f80-88ef-7d410e121404/resource/2447b641-d819-449a-9285-454e25664f46/download/LOGPersPrestaCom2014.csv
+
+
 data_commune:
 	@cd by_commune
 	python DependancePrestaCom.py
@@ -129,3 +138,4 @@ data_commune:
 	python EnfantAEEH.py
 	python RSACom.py
 	python EJCom.py
+	python LogPersPrestaCom.py
