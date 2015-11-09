@@ -1,6 +1,6 @@
 ECHO_SUCCESS=@echo " \033[1;32m✔\033[0m  "
 
-all: install download_commune data_commune
+all: install download_commune data_commune merging
 
 install:
 	pip install -r requirements.txt
@@ -148,3 +148,7 @@ data_commune:
 	python EJCom.py
 	python LogPersPrestaCom.py
 	python EnfantARS.py
+
+merging:
+	@wget -O source/commune_insee.csv  "http://public.opendatasoft.com/explore/dataset/correspondance-code-insee-code-postal/download/?format=csv&timezone=Europe/Berlin&use_labels_for_header=true"
+	python Merging.py
