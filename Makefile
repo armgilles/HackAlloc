@@ -122,6 +122,15 @@ download_commune:
 	@wget -O source/LOGPersPrestaCom2013.csv	http://data.caf.fr/dataset/ad042a79-c4b8-4f80-88ef-7d410e121404/resource/48c22f83-2dcc-4b20-a8c8-ba073ef890cf/download/LOGPersPrestaCom2013.csv
 	@wget -O source/LOGPersPrestaCom2014.csv	http://data.caf.fr/dataset/ad042a79-c4b8-4f80-88ef-7d410e121404/resource/2447b641-d819-449a-9285-454e25664f46/download/LOGPersPrestaCom2014.csv
 
+	# EnfantARS : http://data.caf.fr/dataset/nombre-denfants-couverts-par-l-allocation-de-rentree-scolaire-ars-par-commune
+	@wget -O source/EnfantARS2009.csv	http://data.caf.fr/dataset/4ddb8c82-5a43-48d3-9b2b-40512e807087/resource/a7790e86-f5ab-471e-b427-c8507d728550/download/enfantARS2009.csv
+	@wget -O source/EnfantARS2010.csv	http://data.caf.fr/dataset/4ddb8c82-5a43-48d3-9b2b-40512e807087/resource/02adcd2b-ffb3-4537-89c2-38723486c688/download/enfantARS2010.csv
+	@wget -O source/EnfantARS2011.csv	http://data.caf.fr/dataset/4ddb8c82-5a43-48d3-9b2b-40512e807087/resource/d6d2e400-d511-471e-8d4e-70250bf68043/download/enfantARS2011.csv
+	@wget -O source/EnfantARS2012.csv	http://data.caf.fr/dataset/4ddb8c82-5a43-48d3-9b2b-40512e807087/resource/54562221-7223-4554-a29f-aae23b370590/download/enfantARS2012.csv
+	@wget -O source/EnfantARS2013.csv	http://data.caf.fr/dataset/4ddb8c82-5a43-48d3-9b2b-40512e807087/resource/198a5723-32fa-4fb7-903e-15076badf0e0/download/enfantARS2013.csv
+	@wget -O source/EnfantARS2014.csv	http://data.caf.fr/dataset/4ddb8c82-5a43-48d3-9b2b-40512e807087/resource/bd67d932-1987-4a90-a563-ccce15346ed3/download/enfantARS2014.csv
+
+
 
 data_commune:
 	@cd by_commune
@@ -139,3 +148,4 @@ data_commune:
 	python RSACom.py
 	python EJCom.py
 	python LogPersPrestaCom.py
+	python EnfantARS.py
