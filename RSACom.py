@@ -53,7 +53,7 @@ else:
     print "Hey we lost some lines in RSACom"
 
 
-df.to_csv('data/full_RSACom.csv', encoding='utf-8')
+df.to_csv('data/full_RSACom.csv', encoding='utf-8', index=False)
 
 ## Features 
 #u'NB_allocataires_2009_RSAC',

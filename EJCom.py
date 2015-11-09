@@ -60,7 +60,7 @@ else:
     print "Hey we lost some lines in EJCom"
 
 
-df.to_csv('data/full_EJCom.csv', encoding='utf-8')
+df.to_csv('data/full_EJCom.csv', encoding='utf-8', index=False)
 
 ## Features 
 #uNB_allocataires_2009_EJC',

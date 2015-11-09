@@ -52,7 +52,7 @@ else:
     print "Hey we lost some lines in PageCom"
 
 
-df.to_csv('data/full_PageCom.csv', encoding='utf-8')
+df.to_csv('data/full_PageCom.csv', encoding='utf-8', index=False)
 
 ## Features 
 #u'NB_Allocataires_2009_PC',

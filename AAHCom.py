@@ -51,7 +51,7 @@ else:
     print "Hey we lost some lines in AAHCom"
 
 
-df.to_csv('data/full_AAHCom.csv', encoding='utf-8')
+df.to_csv('data/full_AAHCom.csv', encoding='utf-8', index=False)
 
 ## Features 
 # u'NB_Pers_par_Foyer_Alloc_2009',

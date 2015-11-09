@@ -53,7 +53,7 @@ if (origin_count == final_count):
 else:
     print "Hey we lost some lines in ConfigFamiliale"
 
-df.to_csv('data/full_ConfigFamiliale.csv', encoding='utf-8')
+df.to_csv('data/full_ConfigFamiliale.csv', encoding='utf-8', index=False)
 
 ## Features 
 #[ 'NB_Allocataires_2009_CF', u'COUP_0_ENF',

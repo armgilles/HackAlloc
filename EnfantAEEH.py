@@ -52,7 +52,7 @@ else:
     print "Hey we lost some lines in EnfantAEEH"
 
 
-df.to_csv('data/full_EnfantAEEH.csv', encoding='utf-8')
+df.to_csv('data/full_EnfantAEEH.csv', encoding='utf-8', index=False)
 
 ## Features 
 #u'NB_enfant_AEEH_2009',

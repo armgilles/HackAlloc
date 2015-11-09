@@ -51,7 +51,7 @@ else:
     print "Hey we lost some lines in DependancePresta"
 
 
-df.to_csv('data/full_DependancePrestaCom.csv', encoding='utf-8')
+df.to_csv('data/full_DependancePrestaCom.csv', encoding='utf-8', index=False)
 
 ## Features 
 #[u'NB_Allocataires_2009_DPC',

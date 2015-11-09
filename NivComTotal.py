@@ -51,7 +51,7 @@ if (origin_count == final_count):
 else:
     print "Hey we lost some lines in NivComTotal"
 
-df.to_csv('data/full_NivComTotal.csv', encoding='utf-8')
+df.to_csv('data/full_NivComTotal.csv', encoding='utf-8', index=False)
 
 ## Features 
 #[u'NB_Pers_par_Foyer_Alloc_2009_NCT',
