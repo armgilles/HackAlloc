@@ -3,7 +3,7 @@ ECHO_SUCCESS=@echo " \033[1;32m✔\033[0m  "
 all: install download_commune data_commune
 
 install:
-	#pip install -r requirements.txt
+	pip install -r requirements.txt
 	@rm -rf source
 	@mkdir source
 	@rm -rf data
@@ -133,7 +133,6 @@ download_commune:
 
 
 data_commune:
-	@cd by_commune
 	python DependancePrestaCom.py
 	python BasrevnuCom.py
 	python NivComTotal.py
