@@ -106,6 +106,13 @@ download_commune:
 	@wget -O source/RSACom2013.csv	http://data.caf.fr/dataset/b2b4d0bf-faf4-453f-bdb8-66e203b114c8/resource/f86c1d62-9fae-4cd2-9034-36a4d81f601e/download/RSACom2013.csv
 	@wget -O source/RSACom2014.csv	http://data.caf.fr/dataset/b2b4d0bf-faf4-453f-bdb8-66e203b114c8/resource/4c405f7f-a0ac-4d56-b836-c386e38c8c39/download/RSACom2014.csv
 
+	# EJCom : http://data.caf.fr/dataset/foyers-allocataires-percevant-une-prestation-enfance-et-jeunesse-af-cf-asf-aeeh-et-ars-par-comm
+	@wget -O source/EJCom2009.csv	http://data.caf.fr/dataset/a1f4d94f-0df7-42d9-82ee-b8bf18915488/resource/fddf7c97-0d7d-47c2-834a-ae44dfe69d26/download/EJCom2009.csv
+	@wget -O source/EJCom2010.csv	http://data.caf.fr/dataset/a1f4d94f-0df7-42d9-82ee-b8bf18915488/resource/b1db157e-db47-4b1b-831b-7e4060300952/download/EJCom2010.csv
+	@wget -O source/EJCom2011.csv	http://data.caf.fr/dataset/a1f4d94f-0df7-42d9-82ee-b8bf18915488/resource/c1a2f684-b7e4-4b92-9ac9-8bbcbcb35468/download/EJCom2011.csv
+	@wget -O source/EJCom2012.csv	http://data.caf.fr/dataset/a1f4d94f-0df7-42d9-82ee-b8bf18915488/resource/d67fa36f-5f87-40ac-8518-b62566ce1be2/download/EJCom2012.csv
+	@wget -O source/EJCom2013.csv	http://data.caf.fr/dataset/a1f4d94f-0df7-42d9-82ee-b8bf18915488/resource/9d1a5311-c886-4dee-8ebf-626059a474b2/download/EJCom2013.csv
+	@wget -O source/EJCom2014.csv	http://data.caf.fr/dataset/a1f4d94f-0df7-42d9-82ee-b8bf18915488/resource/1fc10e2d-781e-422e-a0b0-58b51e9bbb8f/download/EJCom2014.csv
 
 data_commune:
 	@cd by_commune
@@ -121,3 +128,4 @@ data_commune:
 	python EnfantAgeCom.py
 	python EnfantAEEH.py
 	python RSACom.py
+	python EJCom.py
